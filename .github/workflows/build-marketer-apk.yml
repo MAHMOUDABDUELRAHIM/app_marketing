@@ -6,6 +6,9 @@ on:
 jobs:
   build-apk:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: manara-marketer-app
 
     steps:
       - name: Checkout
@@ -44,5 +47,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: manara_marketer-apk
-          path: dist/manara_marketer.apk
+          path: manara-marketer-app/dist/manara_marketer.apk
           retention-days: 30
